@@ -1,162 +1,215 @@
-:root {
-    --color-primary: #4B69FD;
-    --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
-    --color-text: #444444;
-    --color-white: #FFFFFF;
-}
-
-/* Estilos generales */
+/* márgenes y estilos predeterminados */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Fondo */
 body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradiente suave de morado a azul */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    background-color: var(--color-primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
-
-/* Banner */
-.header-banner {
-    flex: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 0 0;
-}
-
-/* Sección de entrada */
-.input-section {
-    flex: 60%;
-    background-color: var(--color-secondary);
-    border: 1px solid #000;
-    border-radius: 64px 64px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    color: black;
     padding: 20px;
+}
+
+/* Contenedor principal del sitio */
+.main-content {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     width: 100%;
-}
-
-/* Títulos */
-.main-title {
-    font-size: 48px;
-    font-family: "Merriweather", serif;
-    font-weight: 900;
-    font-style: italic;
-    color: var(--color-white);
-}
-
-.section-title {
-    font-family: "Inter", serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin: 10px 0;
+    max-width: 450px; /* Limita el tamaño máximo del contenedor */
     text-align: center;
+    backdrop-filter: blur(10px); /* Desenfoque de fondo para efecto moderno */
 }
 
-/* Contenedores de entrada y botón */
-.input-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
+/* Estilos del título principal */
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Imagen */
+.header-banner img {
+    width: 120px;
+    margin-bottom: 20px;
+    animation: bounce 1s infinite alternate;
+}
+
+/* Animación de la imagen */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Entrada de amigos */
+.input-section {
     margin-top: 20px;
 }
 
+/* Título para la sección de entrada */
+.section-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Contenedor del campo de entrada y su botón */
+.input-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el campo de entrada*/
 .input-name {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #000;
-    border-radius: 25px 0 0 25px;
-    font-size: 16px;
+    width: 65%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    transition: border-color 0.3s ease;
 }
 
-.button-container {
-    width: 300px;
-    justify-content: center;
+.input-name:focus {
+    outline: none;
+    border-color: #2575fc;
 }
 
-/* Estilos de entrada de texto */
-.input-title {
-    flex: 1;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #333;
-    border-right: none;
-    border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Estilos de botón */
-button {
-    padding: 15px 30px;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    border: 2px solid #000;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-
+/* Estilo para el botón */
 .button-add {
-    background-color: var(--color-tertiary);
-    color: var(--color-text);
-    border-radius: 0 25px 25px 0;
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 30%;
 }
 
 .button-add:hover {
-    background-color: #a1a1a1;
+    background-color: #6a11cb;
 }
 
-/* Listas */
-ul {
+/* Estilo para la lista de amigos */
+.name-list {
     list-style-type: none;
-    color: var(--color-text);
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-    margin: 20px 0;
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
+/* Elementos de la lista */
+.name-list li {
+    background-color: #f5f5f5;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+}
+
+/* Estilo para resultados */
 .result-list {
-    margin-top: 15px;
-    color: #05DF05;
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #2575fc;
 }
 
-/* Botón de sortear título */
+/* Contenedor botón de sortear */
+.button-container {
+    margin-top: 30px;
+}
+
+/* Estilo para el botón de sortear */
 .button-draw {
-    display: flex;
+    padding: 14px 25px;
+    background-color: #6a11cb;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
     align-items: center;
-    width: 100%;
-    padding: 10px 40px;
-    color: var(--color-white);
-    background-color: var(--color-button);
-    font-size: 16px;
-}
-
-.button-draw img {
-    margin-right: 40px;
 }
 
 .button-draw:hover {
-    background-color: var(--color-button-hover);
+    background-color: #2575fc;
+}
+
+/* Estilo para el ícono dentro del botón */
+.button-draw img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* Efecto de animación del cursor por el botón */
+.button-draw:active {
+    transform: scale(0.95);
+}
+
+/* Transiciones suaves de los elementos */
+input, button {
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+input:focus, button:focus {
+    transform: scale(1.05);
+}
+
+/* Media Queries para dispositivos moviles */
+@media (max-width: 600px) {
+    /* En pantallas pequeñas, hacer los campos más grandes */
+    .input-name {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Ajustamos el tamaño de los botones para que sean más fáciles de tocar en pantallas pequeñas */
+    .button-add, .button-draw {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 14px 0;
+    }
+
+    .input-wrapper {
+        flex-direction: column; /* Se asegura que los elementos se apilen verticalmente */
+        justify-content: center;
+    }
+
+    .main-content {
+        padding: 20px;
+        max-width: 100%;
+    }
+}
+
+/* Media Queries para tablets */
+@media (max-width: 900px) {
+    .main-content {
+        padding: 25px;
+        max-width: 90%; /* Un poco más grande en pantallas de tablet */
+    }
+
+    .button-add, .button-draw {
+        font-size: 1.1rem;
+    }
 }

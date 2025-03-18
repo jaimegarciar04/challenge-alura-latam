@@ -1,6 +1,5 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 
-
 // 1. Declaramos el array vacío para almacenar los nombres
 let amigos = [];
 
@@ -30,7 +29,7 @@ function mostrarListaAmigos() {
     // Mostramos la lista en el HTML
     let lista = document.getElementById('listaAmigos');
 
-    // Limpiamos la lista antes de mostrarla
+    // Evitemos duplicados
     lista.innerHTML = "";
 
     // Iteramos sobre el array de amigos y se agrega cada nombre como un <li> en la lista
@@ -59,3 +58,4 @@ function sortearAmigo() {
     let resultado = document.getElementById('resultado');
     resultado.innerHTML = "<li>¡El amigo secreto es: " + amigoSorteado + "!</li>";
 }
+
