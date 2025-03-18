@@ -8,6 +8,12 @@ function agregarAmigo() {
     // Obtenemos un valor de entrada
     let nombreAmigo = document.getElementById('amigo').value;
 
+    // Validamos que el campo no esté vacío
+    if (nombreAmigo === "") {
+        alert("Por favor, inserte un nombre.");
+        return; // Salimos de la función si está vacío
+    }
+
     // Si el campo no está vacío, se agrega el nombre en el array de amigos
     amigos.push(nombreAmigo);
 
