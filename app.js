@@ -29,7 +29,7 @@ function mostrarListaAmigos() {
     // Mostramos la lista en el HTML
     let lista = document.getElementById('listaAmigos');
 
-    // Limpiamos la lista antes de mostrarla
+    // Evitemos duplicados
     lista.innerHTML = "";
 
     // Iteramos sobre el array de amigos y se agrega cada nombre como un <li> en la lista
@@ -39,3 +39,23 @@ function mostrarListaAmigos() {
         lista.appendChild(li);
     }
 }
+
+// 4. Sortear amigo secreto de forma aleatoria
+function sortearAmigo() {
+    // Se valida que haya al menos un amigo en la lista
+    if (amigos.length === 0) {
+        alert("No hay amigos para sortear.");
+        return;
+    }
+
+    // Generamos un índice aleatorio entre 0 y el tamaño de la lista de amigos
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+
+    // Obtenemos el nombre del amigo secreto
+    let amigoSorteado = amigos[indiceAleatorio];
+
+    // Mostramos el resultado en la página
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = "<li>¡El amigo secreto es: " + amigoSorteado + "!</li>";
+}
+
